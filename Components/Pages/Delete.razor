@@ -1,0 +1,50 @@
+﻿@using Feedbackformfrontend.Components
+@using Feedbackformfrontend.Models
+@inject FormClient _client;
+@inject NavigationManager _nav;
+@rendermode InteractiveServer
+
+<div class="modal fade" id="@ModalId(feedBack)" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">@GetTitle()</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" @onclick="ConfirmDelete"
+            data-bs-dismiss="modal">Confirm Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@code {
+    [Parameter]
+    public required FeedBack feedBack {get;set;}
+
+   // private  string title="";
+
+    public static string ModalId(FeedBack feedback)
+    {
+        return $"delete-{feedback.Id}";
+
+    }
+
+    public string GetTitle()
+    {
+        return $"Do you want to delete {feedBack.CompanyName}?";
+    }
+
+    public void ConfirmDelete()
+    {
+        _client.DeleteFeedback(feedBack.Id);
+        _nav.Refresh();
+
+
+    }
+
+
+
+}

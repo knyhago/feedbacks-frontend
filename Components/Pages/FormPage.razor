@@ -1,0 +1,82 @@
+﻿@page "/form"
+@using Feedbackformfrontend.Models
+@using Feedbackformfrontend.Components
+@inject FormClient _client;
+@inject NavigationManager nav;
+
+<h3 class="mb-4">Feedback Form</h3>
+
+@if(form is null )
+{
+    <p><em>Loading...</em></p>
+}
+else{
+    <div class="container">
+        <EditForm FormName="feedbackForm" Model="@form"class="p-4 border rounded shadow-sm bg-light" 
+        OnSubmit="Submit">
+            <DataAnnotationsValidator/>
+            <div class="mb-3">
+                <label for="details"  class="form-label fw-bold">Enter Company Name</label>
+                <InputText  @bind-Value="form.CompanyName" class="form-control"
+                id="companyName" placeholder="Type here..."/>
+            </div>
+
+            <div class="mb-3">
+                <label for="JobTitle" class="form-label fw-bold"> Job title</label>
+                <InputText @bind-Value="form.JobTitle"
+                class="form-control" id="JobTitle" placeholder="Type here..."/>
+            </div>
+
+            <div class="mb-3">
+                <label for="details" class="form-label fw-bold"> Job Id</label>
+                <InputNumber @bind-Value="form.JobId" 
+                class="form-control" id="details" placeholder="Type here..."/>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="details" class="form-label fw-bold">Applied On</label>
+                <InputDate @bind-Value="form.AppliedOn"
+                class="form-control" id="details" placeholder="Type here..."/>
+            </div>
+
+            <InputSelect class="form-control" id="genre" @bind-Value="form.Reasons" >
+                <option value="Sponsorship">Sponsorship</option>
+                <option value="SkillIssue">Skill Issue</option>
+                <option value="Sponsorship">Sponsorship</option>
+            </InputSelect>
+
+
+            <div class="mb-3">
+                <label for="details" class="form-label fw-bold">Enter Details</label>
+                <InputTextArea @bind-Value="form.Details" class="form-control" id="details" placeholder="Type here..."/>
+            </div> 
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </EditForm>
+    </div>
+}
+
+
+@code {
+
+    [SupplyParameterFromForm]
+    public FeedBack form {get;set;}=new()
+  {
+    CompanyName=string.Empty,
+    Reasons=string.Empty,
+    AppliedOn=DateOnly.FromDateTime(DateTime.UtcNow),
+    Details=string.Empty,
+    JobTitle=string.Empty
+
+  };
+
+
+    public void Submit()
+    {
+        _client.AddFeedback(form);
+        nav.NavigateTo("/dashboard");
+        
+   
+    }
+ }

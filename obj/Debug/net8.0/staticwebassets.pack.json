@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/kny/ConsoleApp2/Feedback_front/Feedbackformfrontend/obj/Debug/net8.0/scopedcss/projectbundle/Feedbackformfrontend.bundle.scp.css",
+      "PackagePath": "staticwebassets/Feedbackformfrontend.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/kny/ConsoleApp2/Feedback_front/Feedbackformfrontend/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/kny/ConsoleApp2/Feedback_front/Feedbackformfrontend/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/kny/ConsoleApp2/Feedback_front/Feedbackformfrontend/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/kny/ConsoleApp2/Feedback_front/Feedbackformfrontend/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Feedbackformfrontend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Feedbackformfrontend.props",
+      "PackagePath": "build\\Feedbackformfrontend.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Feedbackformfrontend.props",
+      "PackagePath": "buildMultiTargeting\\Feedbackformfrontend.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Feedbackformfrontend.props",
+      "PackagePath": "buildTransitive\\Feedbackformfrontend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
