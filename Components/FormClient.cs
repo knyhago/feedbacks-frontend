@@ -63,6 +63,7 @@ public List<FeedBack> GetFeedback()=>[..feedbacks];
 
 public void AddFeedback(FeedBack newData)
 {
+    newData.Id=feedbacks.Count()+1;
     feedbacks.Add(newData);
 }
 

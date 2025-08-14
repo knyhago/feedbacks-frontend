@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Feedbackformfrontend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76ea2557575640a9a317b2acfdf66f6c79a6cbce")]
 [assembly: System.Reflection.AssemblyProductAttribute("Feedbackformfrontend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Feedbackformfrontend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

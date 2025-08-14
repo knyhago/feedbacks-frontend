@@ -1,5 +1,7 @@
 using Feedbackform_frontend.Components;
 using Feedbackformfrontend.Components;
+using Syncfusion.Blazor;
+
 
 namespace Feedbackform_frontend;
 
@@ -12,6 +14,8 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
+        builder.Services.AddSyncfusionBlazor();
+
         builder.Services.AddSingleton<FormClient>();
 
         var app = builder.Build();
