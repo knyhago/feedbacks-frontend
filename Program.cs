@@ -9,7 +9,11 @@ public class Program
 {
     public static void Main(string[] args)
     {
+
+         Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXdfdHRdQmNeVUJ2W0tWYEk=");
+
         var builder = WebApplication.CreateBuilder(args);
+        
 
         // Add services to the container.
         builder.Services.AddRazorComponents()

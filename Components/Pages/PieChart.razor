@@ -1,0 +1,43 @@
+﻿@page "/piechart"
+@using Feedbackformfrontend.Components
+@using Feedbackformfrontend.Models
+@inject FormClient client
+@rendermode InteractiveServer
+
+<h1>Pie</h1>
+
+<SfAccumulationChart>
+    <AccumulationChartSeriesCollection>
+        <AccumulationChartSeries DataSource="@pies" XName="Reason" YName="Count">
+        </AccumulationChartSeries>
+    </AccumulationChartSeriesCollection>
+</SfAccumulationChart>
+
+@code {
+    public class Pie
+    {
+        public string Reason { get; set; } = string.Empty;
+        public int Count { get; set; }
+    }
+
+    public List<FeedBack>? feedbacks;
+    public List<Pie> pies { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        feedbacks = await client.GetFeedback();
+
+        if (feedbacks == null || !feedbacks.Any())
+            return;
+
+        pies = feedbacks
+            .Where(f => !string.IsNullOrEmpty(f.Reasons))
+            .GroupBy(x => x.Reasons)
+            .Select(g => new Pie
+            {
+                Reason = g.Key,
+                Count = g.Count()
+            })
+            .ToList();
+    }
+}

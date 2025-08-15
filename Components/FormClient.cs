@@ -59,7 +59,7 @@ public class FormClient
     }
 };
 
-public List<FeedBack> GetFeedback()=>[..feedbacks];
+public async Task<List<FeedBack>> GetFeedback()=>[..feedbacks];
 
 public void AddFeedback(FeedBack newData)
 {
